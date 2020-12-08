@@ -1,45 +1,92 @@
 import React from 'react'
+import styled from 'styled-components'
 
 const TableBody = (props) => {
     return (
-        <table className="standings">
-            <tbody>
-                <tr className="table-head">
-                    <td className="team-position">
+        <Table>
+            <TableContents>
+                <TableHead>
+                    <Position>
                         #
-                    </td>
-                    <td className="team-name">
+                    </Position>
+                    <Club>
                         Team
-                    </td>
-                    <td title="Matches played">
+                    </Club>
+                    <MatchesPlayed title="Matches played">
                         MP
-                    </td>
-                    <td title="Wins">
+                    </MatchesPlayed>
+                    <Wins title="Wins">
                         W
-                    </td>
-                    <td title="Draws">
+                    </Wins>
+                    <Draws title="Draws">
                         D
-                    </td>
-                    <td title="Losses">
+                    </Draws>
+                    <Loses title="Losses">
                         L
-                    </td>
-                    <td title="Goals for">
+                    </Loses>
+                    <GoalsFor title="Goals for">
                         GF
-                    </td>
-                    <td title="Goals against">
+                    </GoalsFor>
+                    <GoalsAgainst title="Goals against">
                         GA
-                    </td>
-                    <td title="Goals difference">
+                    </GoalsAgainst>
+                    <GoalsDifference title="Goals difference">
                         GD
-                    </td>
-                    <td title="Team points">
+                    </GoalsDifference>
+                    <TeamPoints title="Team points">
                         Pts
-                    </td>
-                </tr>
+                    </TeamPoints>
+                </TableHead>
                 {props.children}
-            </tbody>
-        </table>
+            </TableContents>
+        </Table>
     )
 }
 
 export default TableBody
+
+const Table = styled.table`
+    margin: 0 auto;
+    border-collapse: collapse;
+
+    tr:last-child{
+        border: none;
+    }
+
+    td{
+        width: 35px;
+    }
+`
+const TableContents = styled.tbody`
+`
+const TableHead = styled.tr`
+    color: #878787;
+    border-bottom: 1px solid #dedede;
+    line-height: 2.3em;
+`
+const Position = styled.td`
+    color: #878787;
+    text-align: left;
+`
+const Club = styled.td`
+    width: 250px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+`
+const MatchesPlayed = styled.td`
+`
+const Wins = styled.td`
+`
+const Draws = styled.td`
+`
+const Loses = styled.td`
+`
+const GoalsFor = styled.td`
+`
+const GoalsAgainst = styled.td`
+`
+const GoalsDifference = styled.td`
+`
+const TeamPoints = styled.td`
+`
